@@ -1,0 +1,12 @@
+[package]
+name = "twineye_rs"
+version = "0.1.0"
+authors = ["xvi <jrip03@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+opencv = { version = "0.52.0", features = ["buildtime-bindgen"] }
+
+config = "0.10.1"
+dotenv = "0.15.0"
+serde = { version = "1.0.104", features = ["derive"] }
