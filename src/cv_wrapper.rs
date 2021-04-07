@@ -73,13 +73,13 @@ pub mod cv_wrapper {
             imgproc::MORPH_CLOSE,
             &imgproc::get_structuring_element(
                 imgproc::MORPH_ELLIPSE,
-                ,
-                (10, 10)
+                240,
+                opencv::core::Point{10, 10}
             ).unwrap(),
-            core::Point(-1, -1),
-            iterations: 1,
-            border_type: 0,
-            border_value: 0
+            (-1, -1),
+            1,
+            0,
+            0
         )?;
     }
 
