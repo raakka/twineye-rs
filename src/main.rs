@@ -35,7 +35,6 @@ mod config {
 	#[derive(Deserialize)]
 	pub struct Config {
 		pub server_addr: String,
-		pub pg: deadpool_postgres::Config,
 	}
 
 	impl Config {
@@ -50,8 +49,7 @@ mod config {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /// Structs
 mod models {
-    #[derive(debug, serialize, deserialize)]
-    struct packet {
+    struct Packet {
         x_deg: i64,
         y_deg: i64,
         dist: i64,
@@ -59,21 +57,9 @@ mod models {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-/// Wrappers for complicated OCV functions
-mod cv_wrapper {
-    use opencv::{
-        prelude::*,
-        videoio,
-        highgui,
-        imgproc,
-        Result,
-    };
+// Main
+mod cv_wrapper;
 
-    //TODO: Make this real...
-    pub fn hsv_process() -> i32 {
-        2 + 2
-    }
+fn main() -> opencv::Result<()> {
+
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-/// MAIN
